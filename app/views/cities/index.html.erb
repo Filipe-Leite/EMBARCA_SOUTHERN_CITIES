@@ -1,0 +1,62 @@
+<div id='page-cities'>
+  <div id='dashboard'>
+    <div id="top">
+      <div id='container-logo'>
+        <%= image_tag 'embarca-logo.png', alt: 'Embarca Logo' %>
+        <h1 id='test-subtitle'>Middle Level Test</h1>
+      </div>
+    </div>
+
+    <div id="middle">
+      <h1 id="cities-title">Southern Cities</h1>
+
+      <div id='container-form'>
+        <form action="/cities" method="get">
+          <label for="state">State:</label>
+          <select id="acronym" name="acronym">
+            <option value="">All</option>
+            <% @states.each do |state| %>
+              <option value="<%= state.acronym %>"><%= state.name %></option>
+            <% end %>
+          </select>
+
+          <label for="name">City Name:</label>
+          <input type="text" id="name" name="name">
+
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="city-table">
+          <thead id="header">
+            <tr>
+              <th>Paraná</th>
+              <th>Santa Catarina</th>
+              <th>Rio Grande do Sul</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <% @cities.select { |city| city.state_id == 1 }.each do |city| %>
+                  <div><%= city.name %></div>
+                <% end %>
+              </td>
+              <td>
+                <% @cities.select { |city| city.state_id == 2 }.each do |city| %>
+                  <div><%= city.name %></div>
+                <% end %>
+              </td>
+              <td>
+                <% @cities.select { |city| city.state_id == 3 }.each do |city| %>
+                  <div><%= city.name %></div>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
