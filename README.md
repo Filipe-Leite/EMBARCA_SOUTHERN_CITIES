@@ -1,5 +1,7 @@
 # Using ruby '2.7.0' and 'rails', '~> 5.2.8'
 
+### This project is a test made with rails and postgres. Using the government IBGE api for populate the database the project show the cities based on 2 search filters fields (state acronym and city name).
+
 ## Create a postgres superuser called "filipe" with the password "1234"
 
   sudo -u postgres psql
