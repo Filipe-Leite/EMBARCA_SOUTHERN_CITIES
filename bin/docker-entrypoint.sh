@@ -6,4 +6,6 @@ if [ "${*}" == "./bin/rails server" ]; then
     ./bin/rails db:seed
 fi
 
+rm -f /app/tmp/pids/server.pid
+
 exec "${@}"

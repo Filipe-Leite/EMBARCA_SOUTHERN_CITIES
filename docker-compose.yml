@@ -18,10 +18,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -b '0.0.0.0'"
     volumes:
       - .:/app
     entrypoint: ./bin/docker-entrypoint.sh
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://filipe:1234@db:5432/EMBARCA_SOUTHERN_CITIES
+      - DATABASE_URL=postgresql://filipe:1234@db:5432/embarca_southern_cities_development
