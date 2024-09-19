@@ -1,24 +1,21 @@
-# README
+# Using ruby '2.7.0' and 'rails', '~> 5.2.8'
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This project is a test made with rails and postgres. Using the government IBGE api for populate the database the project show the cities based on 2 search filters fields (state acronym and city name).
 
-Things you may want to cover:
+## Create a postgres superuser called "filipe" with the password "1234"
 
-* Ruby version
+  sudo -u postgres psql
+  psql
+  CREATE ROLE filipe WITH LOGIN SUPERUSER PASSWORD '1234';
 
-* System dependencies
+## Clone the project and run the command:
 
-* Configuration
+  rails db:create db:migrate db:seed
 
-* Database creation
+## In your browser's search field write the url below and type enter: 
 
-* Database initialization
+  http://localhost:3000/
 
-* How to run the test suite
+# Success!!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![embarcar_test](https://github.com/user-attachments/assets/f5c89450-246f-4bea-9881-383b29d69553)
