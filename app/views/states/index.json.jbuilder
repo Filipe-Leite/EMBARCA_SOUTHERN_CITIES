@@ -1,1 +1,1 @@
-json.array! @states, partial: "states/state", as: :state
+json.array! @states, partial: 'states/state', as: :state

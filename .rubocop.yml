@@ -1,15 +1,21 @@
 require:
   - rubocop-rails
+  - rubocop-capybara
+  - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
-  TargetRubyVersion: 2.7.0
-  TargetRailsVersion: 5.2.8
+  Exclude:
+    - config/**/*
+    - db/migrate/**/*
+    - 'bin/setup'
+    - 'bin/update'
 
-Exclude:
-  - "bin/**/*"
-  - "db/schema.rb"
-  - "node_modules/**/*"
-  - "vendor/**/*"
+Rails:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

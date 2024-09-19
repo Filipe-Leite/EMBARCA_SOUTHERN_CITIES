@@ -1,1 +1,1 @@
-json.partial! "states/state", state: @state
+json.partial! 'states/state', state: @state

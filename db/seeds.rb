@@ -1,32 +1,26 @@
 require 'net/http'
 require 'json'
 
-State.create(name: "Paraná",acronym: "pr")
-State.create(name: "Santa Catarina",acronym: "sc")
-State.create(name: "Rio Grande do Sul",acronym: "rs")
+State.create(name: 'Paraná', acronym: 'pr')
+State.create(name: 'Santa Catarina', acronym: 'sc')
+State.create(name: 'Rio Grande do Sul', acronym: 'rs')
 
 def seed_cities
+  states = State.all
 
-    states = State.all
+  states.each do |state|
+    ibge_api_service = IbgeGov.new
 
-    states.each do |state|
+    response = ibge_api_service.get_cities_by_uf(state.acronym)
 
-        ibge_api_service = IbgeGov.new()
+    next unless response.is_a?(Net::HTTPSuccess)
 
-        response = ibge_api_service.get_cities_by_uf(state.acronym)
+    @cities_response = JSON.parse(response.body)
 
-        if response.is_a?(Net::HTTPSuccess)
-            @cities_response = JSON.parse(response.body)
-
-            @cities_response.each do |city|
-                City.create(name: city["nome"], state_id: state.id )
-            end
-        end
-    end    
-
-    
+    @cities_response.each do |city|
+      City.create(name: city['nome'], state_id: state.id)
+    end
+  end
 end
 
-
 seed_cities
-
