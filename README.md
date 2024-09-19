@@ -12,7 +12,7 @@
 
   rails db:create db:migrate db:seed
 
-## In your browser's search field write the url below and type enter: 
+## In your browser's url field write the url below and type enter: 
 
   http://localhost:3000/
 
