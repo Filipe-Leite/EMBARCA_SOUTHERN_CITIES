@@ -1,7 +1,11 @@
 FROM ruby:2.7.0
 
 RUN apt-get update -qq && \
-    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs postgresql-client npm yarn && \
+    apt-get install -y build-essential \
+    libvips bash bash-completion libffi-dev \
+    tzdata postgresql nodejs postgresql-client \
+    npm yarn apt-transport-https ca-certificates \
+    curl gnupg lsb-release && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
@@ -35,4 +39,4 @@ ENTRYPOINT ["./bin/docker-entrypoint.sh"]
 EXPOSE 3000
 # CMD ["bash", "-c", "/usr/bin/wait-for-it.sh db:5432 -- rm -f tmp/pids/server.pid && bundle exec rails db:drop db:create db:migrate db:seed && bundle exec rails s -b '0.0.0.0'"]
 CMD ["bash", "-c", "db:5432 -- rm -f tmp/pids/server.pid"]
-CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bin/rails s -b '0.0.0.0'"]
+CMD ["bash", "-c", "rm -f tmp/pids/server.pid && RAILS_ENV=development bin/rails s  -b '0.0.0.0'"]

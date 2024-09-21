@@ -12,17 +12,20 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
     ports:
       - "5433:5432"
+
   web:
     build: 
       context: . 
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails assets:precompile && bin/rails s -b '0.0.0.0'"
     volumes:
       - .:/app
+      - ./tmp/cache:/app/tmp/cache  # Volume para cache de assets
     entrypoint: ./bin/docker-entrypoint.sh
     depends_on:
       - db
     environment:
       - DATABASE_URL=postgresql://filipe:1234@db:5432/embarca_southern_cities_development
+      - SECRET_KEY_BASE=e49aba84786b60f539567880a204c7c8eba35076d2fbfba0ac059b899efe9a0113372e9fa3fd4bdf1be63823f86979ea2f8767755c2299bbd67a4e1e0f4e6c04

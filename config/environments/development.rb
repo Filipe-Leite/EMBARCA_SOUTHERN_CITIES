@@ -34,7 +34,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.active_support.deprecation = false
+  config.active_support.deprecation = :silence
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
