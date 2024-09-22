@@ -4,8 +4,8 @@
 
 ## Clone the project and run the command below (if your machine has docker and docker compose installed):
 
-  [sudo] docker-compose build
-  [sudo] docker-compose up
+  sudo docker-compose build
+  sudo docker-compose up
 
 ## If your machine doesn't have Docker installed you can follow the steps below (you will need to install postgres and set it up):
 
