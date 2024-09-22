@@ -1,16 +1,10 @@
 # Using ruby '2.7.0' and 'rails', '~> 5.2.8'
 
-### This project is a test made with rails and postgres. Using the government IBGE api for populate the database the project show the cities based on 2 search filters fields (state acronym and city name).
+### This project is a company's test for ruby middle level developer job, the project uses rails 5.2.x and postgres 16. The project uses IBGE api for populate the database, and shows cities based on 2 search filters fields (state acronym and city name).
 
-## Create a postgres superuser called "filipe" with the password "1234"
+## Clone the project and run the command below (if you have docker and docker compose installed on you machine):
 
-  sudo -u postgres psql
-  psql
-  CREATE ROLE filipe WITH LOGIN SUPERUSER PASSWORD '1234';
-
-## Clone the project and run the command:
-
-  rails db:create db:migrate db:seed
+  sudo docker-compose build
 
 ## In your browser's url field write the url below and type enter: 
 
