@@ -6,7 +6,12 @@
 
   sudo docker-compose build
 
-## If your machine doesn't have Docker installed
+## If your machine doesn't have Docker installed you can follow the steps below (you will need to install postgres and set it up):
+
+  sudo -u postgres psql
+  psql
+  CREATE ROLE filipe WITH LOGIN SUPERUSER PASSWORD '1234';
+  rails db:create db:migrate db:seed
 
 ## In your browser's url field write the url below and type enter: 
 
