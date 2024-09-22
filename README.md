@@ -2,9 +2,11 @@
 
 ### This project is a company's test for ruby middle level developer job, the project uses rails 5.2.x and postgres 16. The project uses IBGE api for populate the database, and shows cities based on 2 search filters fields (state acronym and city name).
 
-## Clone the project and run the command below (if you have docker and docker compose installed on you machine):
+## Clone the project and run the command below (if your machine has docker and docker compose installed):
 
   sudo docker-compose build
+
+## If your machine doesn't have Docker installed
 
 ## In your browser's url field write the url below and type enter: 
 
