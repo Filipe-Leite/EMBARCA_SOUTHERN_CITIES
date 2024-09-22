@@ -9,7 +9,7 @@
 
 ## If your machine doesn't have Docker installed you can follow the steps below (you will need to install postgres and set it up):
 
-  sudo -u postgres psql
+  sudo -u postgres psql \n
   psql
   CREATE ROLE filipe WITH LOGIN SUPERUSER PASSWORD '1234';
   rails db:create db:migrate db:seed
