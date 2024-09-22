@@ -2,10 +2,7 @@ FROM ruby:2.7.0
 
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
-    libvips bash bash-completion libffi-dev \
-    tzdata postgresql nodejs postgresql-client \
-    npm yarn apt-transport-https ca-certificates \
-    curl gnupg lsb-release && \
+    libffi-dev tzdata postgresql-client nodejs yarn && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
