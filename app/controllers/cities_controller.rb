@@ -5,9 +5,11 @@ class CitiesController < ApplicationController
 
     @cities = @cities.joins(:state).where('states.acronym = ?', params[:acronym]) if params[:acronym].present?
 
-    return if params[:name].blank?
+    if params[:name].present?
+      @cities = @cities.where('cities.name ILIKE ?', "%#{params[:name]}%")
+    end
 
-    @cities = @cities.where('cities.name ILIKE ?', "%#{params[:name]}%")
+    @cities = @cities.distinct
   end
 
   private
