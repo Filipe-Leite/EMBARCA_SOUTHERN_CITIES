@@ -25,7 +25,7 @@
 
 rspec spec/controllers/cities_controller_spec.rb 
 
-###to test the routing...
+### to test the routing...
 
 rspec spec/routing/cities_routing_spec.rb 
 
