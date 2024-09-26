@@ -21,8 +21,13 @@
 
 # You can also run the test suite running in terminal inside the project directory:
 
-rspec spec/controllers/cities_controller_spec.rb ###[to test the search method]
-rspec spec/routing/cities_routing_spec.rb ##[to test the routing]
+### to test the search method...
+
+rspec spec/controllers/cities_controller_spec.rb 
+
+###to test the routing...
+
+rspec spec/routing/cities_routing_spec.rb 
 
 ![embarcar_test](https://github.com/user-attachments/assets/f5c89450-246f-4bea-9881-383b29d69553)
 
