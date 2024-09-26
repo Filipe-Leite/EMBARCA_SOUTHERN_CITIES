@@ -19,7 +19,7 @@
 
 # Success!!
 
-# You can also run the test suite running in terminal inside the project directory:
+# You can also run the test suite inside the project directory running on terminal:
 
 ### to test the search method...
 
